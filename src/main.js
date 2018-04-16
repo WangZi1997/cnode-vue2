@@ -5,20 +5,17 @@ import App from './App'
 import router from './router'
 import store from './store/'
 import { InfiniteScroll } from 'mint-ui'
-import "@/style/transition.css";
+import '@/style/transition.css'
 
-
-Vue.config.productionTip = false
-Vue.use(InfiniteScroll);
-
-
+// Vue.config.productionTip = false
+Vue.use(InfiniteScroll)
 
 /* eslint-disable no-new */
 
 new Vue({
-  el: '#app',
+  // el: '#app',
   router,
-  store,
-  components: { App },
-  template: '<App/>'
-})
+  store
+  // components: { App },
+  // template: '<App/>',
+}).$mount('#app')

@@ -1,11 +1,11 @@
 <template>
-    <div  
-        v-infinite-scroll="getTopics"
-        infinite-scroll-disabled="loading"
-        infinite-scroll-distance="40">
-        <card v-for="item in data" :key="item.id" :item="item" :list="'YES'"></card>
+  <div>
+    <div v-infinite-scroll="getTopics" infinite-scroll-disabled="scroll_disabled" infinite-scroll-distance="40">
+      <card v-for="item in data" :key="item.id" :item="item" :list="'YES'"></card>
 
     </div>
+
+  </div>
 </template>
 <script>
 import { topics } from '@/service/'
@@ -17,12 +17,12 @@ export default {
             limit: 10,
             page: 1,
             data: [],
-            loading: true
+            scroll_disabled: true
         }
     },
     methods: {
         getTopics() {
-            this.loading = true
+            this.scroll_disabled = true
             topics({
                 limit: this.limit,
                 page: this.page
@@ -30,7 +30,7 @@ export default {
                 if (success) {
                     this.data = [...this.data, ...data]
                     this.page += 1
-                    if (data.length != 0) this.loading = false
+                    if (data.length != 0) this.scroll_disabled = false
                 }
             })
         }
@@ -39,8 +39,13 @@ export default {
         card
     },
     computed: {},
-    created() {
+    mounted() {
         this.getTopics()
+    },
+    watch: {
+        $route(to, from) {
+            this.scroll_disabled = to.name !== 'home'
+        }
     }
 }
 </script>

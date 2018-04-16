@@ -1,27 +1,27 @@
 <template>
-   <transition name="slide-fade">
+  <transition name="slide-fade">
     <div class="card" @click="toDetails">
-        <div class="card-content">
-            <div class="item-content">
-                <p class="item-media">
-                    <img width="44" height="44" :src="item.author.avatar_url" alt="">
-                </p>
-                <div class="item-inner">
-                    <h3>{{item.title}}</h3>
-                    <p>
-                        <span>
-                            回复{{item.reply_count}}/阅读{{item.visit_count}}
-                        </span>
-                        <span>
-                            作者:{{item.author.loginname}}
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>        
+      <div class="card-content">
+        <div class="item-content">
+          <p class="item-media">
+            <img width="44" height="44" :src="item.author.avatar_url" alt="">
+          </p>
+          <div class="item-inner">
+            <h3>{{item.title}}</h3>
+            <p>
+              <span>
+                回复{{item.reply_count}}/阅读{{item.visit_count}}
+              </span>
+              <span>
+                作者:{{item.author.loginname}}
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </transition>
-     
+
 </template>
 
 <script>
@@ -44,8 +44,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .card {
     background: #fff;
     box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.3);
@@ -62,6 +60,10 @@ export default {
             text-align: left;
             padding-left: 0.75rem;
             padding-right: 0.75rem;
+            h3 {
+                width: 12rem;
+                word-wrap: break-word;
+            }
         }
     }
 }
