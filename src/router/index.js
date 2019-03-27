@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from '../App.vue'
+
 const HelloWorld = r =>
   require.ensure([], () => r(require('@/page/HelloWorld')), 'HelloWorld')
+
 const home = r =>
   require.ensure([], () => r(require('@/page/home/home')), 'home')
+
 const details = r =>
   require.ensure([], () => r(require('@/page/details/details')), 'details')
 
@@ -40,7 +43,7 @@ export default new Router({
         }
       ]
     }
-  ],
+  ]
   // scrollBehavior(to, from, savedPosition) {
   //   if (savedPosition) {
   //     return savedPosition

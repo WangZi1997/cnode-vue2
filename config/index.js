@@ -73,5 +73,5 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   baseUrl: 'https://cnodejs.org/api/v1',
-  accessToken: '52e49e5f-9901-4823-89fb-70fff5939873'
+  accessToken: '9a4933de-cc44-4af7-baa3-1cbb7af80118'
 }

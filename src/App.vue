@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <header-top></header-top>
 
     <keep-alive>
@@ -40,3 +40,5 @@ export default {
     transform: translate(-50%, -50%);
 }
 </style>
+
+
